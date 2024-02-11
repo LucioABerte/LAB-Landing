@@ -1,7 +1,6 @@
 'use client'
 import React, { createContext, useContext, useState } from 'react';
 import translations from './translations.json';
-import { Skeleton } from '@mui/material';
 
 
 type TranslationKeys = keyof typeof translations['en'];

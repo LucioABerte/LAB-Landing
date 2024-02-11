@@ -29,9 +29,9 @@ function ServiceSection() {
     },
   ];
   return (
-    <section id="services">
+    <section id="services" className="pt-[20rem]">
        {loadingTranslation ? (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center ">
               <Skeleton variant="text" width={160} height={50} animation="wave" />
               <Skeleton variant="text" width={500} height={70} animation="wave" />
             </div>

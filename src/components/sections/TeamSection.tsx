@@ -24,7 +24,7 @@ function TeamSection() {
     },
   ];
   return (
-    <section className="flex flex-col h-[35rem] mt-[12rem]" id="team">
+    <section className="flex flex-col h-[35rem] mt-[12rem] mb-[15rem]" id="team">
       {loadingTranslation ? (
           <div className="flex flex-col items-center">
             <Skeleton variant="text" width={160} height={50} animation="wave" />
@@ -40,7 +40,7 @@ function TeamSection() {
             <Skeleton variant="rectangular" width={600} height={400} animation="wave" />
           </div>
         ) : (
-          <div className="grid gap-[20%] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:mt-[10rem]">
+          <div className="grid gap-[20%] grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:mt-[10rem] 2xl:pt-44">
             {teamData.map((team) => (
               <TeamCard
                 key={team.id}

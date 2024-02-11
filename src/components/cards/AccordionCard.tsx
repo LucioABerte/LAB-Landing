@@ -7,11 +7,14 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Album, Diversity1, GraphicEq, LibraryAdd, SpeakerGroup, Tune } from '@mui/icons-material';
 import { useTranslation } from '@/context/TranslationContext';
-import { Skeleton } from '@mui/material';
+import { Skeleton, useMediaQuery } from '@mui/material';
 
 export default function ControlledAccordions() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
   const {t, loadingTranslation} = useTranslation()
+
+  const isSmallScreen = useMediaQuery('(max-width:700px)');
+
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -19,7 +22,7 @@ export default function ControlledAccordions() {
     };
 
   return (
-    <div className='w-[90%]'>
+    <div className={` ${isSmallScreen ? "w-[100%]" : "" } w-[90%]`}>
       {loadingTranslation ? (
           <div className='flex items-start justify-start flex-col mr-[16rem]'>
             <Skeleton variant="text" width={850} height={60} animation="wave" />
@@ -36,7 +39,7 @@ export default function ControlledAccordions() {
                 '& .MuiTypography-root': {
                   fontFamily: 'League Spartan, sans-serif', 
                   color: '#fcfcfc',
-                  fontSize: '1.2rem', 
+                  fontSize: isSmallScreen ? '18px' : '1.2rem', 
                 },
                 '& .description': {
                   color: '#808080',
@@ -50,8 +53,8 @@ export default function ControlledAccordions() {
                 aria-controls="panel1bh-content"
                 id="panel1bh-header"
                 >
-                <Typography sx={{ width: '33%', flexShrink: 0,  display:"flex", gap: "1rem", alignItems: "center" }}>
-                  <LibraryAdd /> {t("AboutAcc1")}
+                <Typography sx={{flexShrink: 0,  display:"flex", gap: isSmallScreen ? "0.5rem" : "1rem", alignItems: "center" }}>
+                  <LibraryAdd fontSize={isSmallScreen ? "small" : "inherit"}/> {t("AboutAcc1")}
                 </Typography>
               </AccordionSummary>
               <hr className='w-[20%] bg-white opacity-[10%] relative left-[40%] right-[40%] mb-2'/>
@@ -81,7 +84,7 @@ export default function ControlledAccordions() {
                 aria-controls="panel2bh-content"
                 id="panel2bh-header"
                 >
-                  <Typography sx={{ width: '33%', flexShrink: 0, display:"flex", gap: "1rem",  alignItems: "center" }}>
+                  <Typography sx={{ flexShrink: 0, display: "flex", gap: isSmallScreen ? "0.5rem" : "1rem", alignItems: "center" }}>
                     <Tune/> {t("AboutAcc2")}
                   </Typography>
               </AccordionSummary>
@@ -112,7 +115,7 @@ export default function ControlledAccordions() {
                 aria-controls="panel3bh-content"
                 id="panel3bh-header"
                 >
-                <Typography sx={{ width: '33%', flexShrink: 0, display:"flex", gap: "1rem",  alignItems: "center" }}>
+                <Typography sx={{flexShrink: 0, display:"flex", gap: isSmallScreen ? "0.5rem" : "1rem",  alignItems: "center" }}>
                   <GraphicEq /> {t("AboutAcc3")}
                 </Typography>
               </AccordionSummary>
@@ -129,7 +132,7 @@ export default function ControlledAccordions() {
                 '& .MuiTypography-root': {
                   fontFamily: 'League Spartan, sans-serif', 
                   color: '#fcfcfc',
-                  fontSize: '1.2rem', 
+                  fontSize: isSmallScreen ? '18px' : '1.2rem', 
                 },
                 '& .description': {
                   color: '#808080',
@@ -143,14 +146,14 @@ export default function ControlledAccordions() {
                 aria-controls="panel4bh-content"
                 id="panel4bh-header"
                 >
-                <Typography sx={{ width: '33%', flexShrink: 0,  display:"flex", gap: "1rem",  alignItems: "center" }}>
+                <Typography sx={{flexShrink: 0,  display:"flex", gap: isSmallScreen ? "0.5rem" : "1rem",  alignItems: "center" }}>
                   <Diversity1 /> {t("AboutAcc4")}
                 </Typography>
               </AccordionSummary>
               <hr className='w-[20%] bg-white opacity-[10%] relative left-[40%] right-[40%] mb-2'/>
               <AccordionDetails>
                 <Typography className="description">
-                |{t("AboutAccDesc4")}
+                  {t("AboutAccDesc4")}
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -174,7 +177,7 @@ export default function ControlledAccordions() {
                 aria-controls="panel4bh-content"
                 id="panel4bh-header"
                 >
-                <Typography sx={{ width: '33%', flexShrink: 0,  display:"flex", gap: "1rem",  alignItems: "center" }}>
+                <Typography sx={{flexShrink: 0,  display:"flex", gap: isSmallScreen ? "0.5rem" : "1rem",  alignItems: "center" }}>
                   <SpeakerGroup /> {t("AboutAcc5")}
                 </Typography>
               </AccordionSummary>

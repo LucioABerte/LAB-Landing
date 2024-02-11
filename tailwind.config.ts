@@ -42,7 +42,14 @@ const config = {
       },
       fontSize: {
         normal: "1.125rem"
-      }
+      },
+      screens: {
+        'sm': {'min': '300px', 'max': '374px'},
+        'stm': {'min': '374px', 'max': '767px'},
+        'md': {'min': '768px', 'max': '1023px'},
+        'xl': {'min': '1024px', 'max': '1535px'},
+        '2xl': {'min': '1536px'},
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

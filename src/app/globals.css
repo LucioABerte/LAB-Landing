@@ -21,3 +21,14 @@
     0px 100px 80px 0px rgba(0, 0, 0, 0.07);
 }
 
+.texto-aumentado {
+  transition: transform 0.3s ease-out;
+}
+
+.texto-aumentado:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  color: #ffdf2b; 
+}

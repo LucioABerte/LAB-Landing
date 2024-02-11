@@ -6,7 +6,7 @@ type MainButtonProps = {
   text: string;
   form?: string;
   isLoading?: boolean;
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   action?: () => void;
   isSubmitable?: boolean;
   disabled?: boolean;
@@ -19,6 +19,7 @@ type MainButtonProps = {
   rightIconClass?: string;
   iconComponent?: ReactElement;
   size?: "small" | "normal" | "large";
+  href?: string;
 };
 
 const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
@@ -40,6 +41,7 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
       rightIconClass = "w-[24px] h-[24px]",
       iconComponent,
       size = "normal",
+      href,
     },
     ref
   ) => {
@@ -60,7 +62,9 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       if (!disabled) {
-        if (onClick) {
+        if (href) {
+          window.open(href, "_blank"); // Abre la URL en una nueva pestaña
+        } else if (onClick) {
           onClick(event); // Llama a la función onClick personalizada si está definida
         } else if (action) {
           action(); // Llama a la función action si está definida
@@ -73,7 +77,7 @@ const MainButton = forwardRef<HTMLButtonElement, MainButtonProps>(
         form={form}
         className={`${
           isSecondaryVariant ? "text-normal text-white  bg-secondary" : "bg-primary"
-        } text-white shadow-xl ${propWidth} md:${propWidth}  select-none rounded-[0.625rem] hover:opacity-90 ${variant_hover} ${size_height} ${classes}`}
+        } text-white shadow-xl ${propWidth} md:${propWidth}  select-none rounded-[0.625rem] hover:opacity-90 texto-aumentado ${variant_hover} ${size_height} ${classes}`}
         onClick={handleClick}
         type={isSubmitable ? "submit" : "button"}
         ref={ref}

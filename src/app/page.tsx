@@ -13,7 +13,7 @@ export default function Home() {
     <main className="bg-[#141414]">
       <TranslationProvider>
         <NavBar />
-        <div className="mt-24 md:32 lg:mt-8 px-4  md:px-[9rem]">
+        <div className="mt-24 md:32 lg:mt-8 px-4 md:px-[5rem] 2xl:px-24">
           <HeroSection />
           <ServiceSection />
           <VideoPlayerSection />

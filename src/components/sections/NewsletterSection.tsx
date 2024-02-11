@@ -78,7 +78,7 @@ function NewsletterSection() {
  
 
   return ( 
-    <section className="mt-[15rem]" id="download">
+    <section className="pt-[15rem] md:h-screen md:pt-[20rem]" id="download">
       <Confetti
         active={snackbarOpen}
         config={{
@@ -116,28 +116,28 @@ function NewsletterSection() {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:flex-row  items-center mt-8 md:mt-[3.31rem]">
+          <div className="flex flex-col md:flex-row  items-center md:mt-[2.31rem] sm:mt-0">
             <div>
               <img
                 src={`/images/${t("Guide")}`}
                 alt="large envelop image"
-                className="md:w-full"
+                className="md:w-full sm:w-[80%] sm:ml-5 stm:w-[80%] stm:ml-6"
               />
             </div>
             <div>
-              <p className="mb-[1.44rem] ml-16 text-normal font-semibold text-customGray">
+              <p className="mb-[1.44rem] ml-16 text-normal font-semibold text-customGray sm:mb-0 sm:ml-2 stm:mb-0 stm:ml-0">
                 {t("DownloadDesc")}
               </p>
               <div className="flex flex-col items-center mt-12">
                 <Input
                   type="email"
                   placeholder={t("email")}
-                  className="w-[60%] h-[3.8125rem] rounded-xl newsletter-box-shadow"
+                  className="w-[60%] h-[3.8125rem] rounded-xl newsletter-box-shadow sm:w-full stm:w-full"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 {error && <p className="text-red-500 mt-2">{error}</p>}
-                <div className="w-[60%] h-[3.5rem] mt-[3.12rem]">
+                <div className="w-[60%] h-[3.5rem] mt-[3.12rem] sm:w-full stm:w-full">
                   <button className="w-full h-full bg-primary text-white shadow-xl select-none rounded-[0.625rem] hover:bg-customGray" onClick={handleDownload} disabled={loading}>
                     {loading ? 
                         <div>

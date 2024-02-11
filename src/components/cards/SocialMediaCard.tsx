@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton, Tooltip } from "@mui/material";
+import { IconButton, Tooltip, useMediaQuery } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { WhatsApp, YouTube } from "@mui/icons-material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,17 +11,21 @@ const SocialMediaCard: React.FC = () => {
     const iconStyle = {
         color: "#ffdf2b",
     };
+    const isSmallScreen = useMediaQuery('(max-width:700px)');
 
   return (
     <div
       style={{
         position: "fixed",
-        bottom: "50px",
-        right: "20px",
+        bottom: isSmallScreen ? "5px" : "50px",
+        right: isSmallScreen ? "5px" : "20px",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
+        backgroundColor: isSmallScreen ? "#2a2a2acc" : "",
+        borderRadius: isSmallScreen ? "5%" : ""
       }}
+      className="social"
     >
         <Tooltip title="Whatsapp" placement="left" arrow>
             <IconButton href="https://wa.me/5492233479633" sx={{ "&:hover": { transform: "scale(1.1)" } }}>

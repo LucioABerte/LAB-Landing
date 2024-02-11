@@ -89,7 +89,7 @@ function TestimonialSection() {
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-16  md:grid-cols-2 mt-8 md:mt-[6.75rem]">
+        <div className="grid grid-cols-2 gap-12 sm:grid-cols-1 stm:grid-cols-1 md:grid-cols-2 mt-8 md:mt-[6.75rem] xl:gap-8 2xl:gap-4">
           {appReviewData.map((review) => (
             <TestimonialCard
               key={review.id}

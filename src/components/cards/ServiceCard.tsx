@@ -21,7 +21,7 @@ function ServiceCard({ iconUrl, title, description, action }: IProps) {
       </div>
       <p className="text-[2.25rem] font-[700] text-lightBlue">{title}</p>
       <p className="text-normal text-customGray">{description}</p>
-      <MainButton text={t("ServiceButtons")} action={action} classes="w-[10.125rem] hover:bg-customGray" />
+      <MainButton text={t("ServiceButtons")} action={action} classes="w-[10.125rem] hover:bg-customGray" href="https://www.instagram.com/lab.homestudio/" />
     </div>
   );
 }

@@ -19,7 +19,7 @@ function TeamCard({ imageUrl, name, profession }: IProps) {
           />
         </div>
         <p className="text-lightBlue font-bold text-[1.2rem] my-6">{name}</p>
-        <p className="text-darkBlue font-bold opacity-[0.3]">{profession}</p>
+        <p className="text-darkBlue font-bold opacity-[0.3] mx-8">{profession}</p>
       </div>
 
       {/*<div className="flex justify-around items-center h-[3.6875rem] border-[4px] border-primary border-t-0  rounded-b-[1rem]">
