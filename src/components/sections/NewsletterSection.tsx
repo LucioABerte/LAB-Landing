@@ -12,6 +12,7 @@ function NewsletterSection() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  
 
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -36,32 +37,30 @@ function NewsletterSection() {
     document.body.removeChild(link);
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     if (validateEmail()) {
       setLoading(true);
-
-      fetch('/api/saveEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      })
-        .then(response => {
-          if (response.ok) {
-            downloadPDF();
-            setSnackbarOpen(true);
-          } else {
-            throw new Error('Error saving email.');
-          }
-        })
-        .catch(error => {
-          console.error('Error saving email:', error);
-          // Handle error here
-        })
-        .finally(() => setLoading(false));
+      downloadPDF();
+      try {
+        const response = await fetch('/api/save-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+        if (response.ok) {
+          setSnackbarOpen(true);
+        } else {
+          console.error('Error al guardar el correo electrónico en el servidor');
+        }
+      } catch (error) {
+        console.error('Error al conectar con el servidor:', error);
+      }
     }
+    setLoading(false);
   };
+
 
   return (
     <section className="pt-[15rem] md:h-screen md:pt-[20rem] overflow-hidden" id="download">
