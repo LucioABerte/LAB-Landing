@@ -37,6 +37,12 @@ export const TranslationProvider: React.FC<Props> = ({ children }) => {
 
   return (
     <TranslationContext.Provider value={{ language, setLanguage, t, loadingTranslation, setLoadingTranslation }}>
+      {loadingTranslation && (
+        <div className="loading-overlay">
+          <div className="spinner"></div>
+            <p>{t("Loading")}</p>
+        </div>
+      )}
       {children}
     </TranslationContext.Provider>
   );

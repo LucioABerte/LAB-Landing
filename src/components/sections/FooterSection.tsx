@@ -15,13 +15,7 @@ function FooterSection() {
     <section className="flex flex-col gap-[1.9rem] w-full mt-[10.44rem]">
       <div className="flex flex-col md:flex-row gap-8 justify-between">
         <div className="text-lightBlue text-[1rem] font-serif">
-          {loadingTranslation ? 
-            (
-              <Skeleton variant="text" width={400} height={40}/>
-            ) :(
-              t("Footer")
-            )
-          }
+          {t("Footer")}
         </div>
         <SocialMediaCard/>
       </div>
