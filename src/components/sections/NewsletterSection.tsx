@@ -40,6 +40,7 @@ function NewsletterSection() {
   const handleDownload = async () => {
     if (validateEmail()) {
       setLoading(true);
+      downloadPDF();
       try {
         const response = await fetch('/api/save-email', {
           method: 'POST',
@@ -49,15 +50,14 @@ function NewsletterSection() {
           body: JSON.stringify({ email }),
         });
         if (response.ok) {
-          downloadPDF();
           setSnackbarOpen(true);
-          setLoading(false);
         } else {
           console.error('Error al guardar el correo electrónico en el servidor');
         }
       } catch (error) {
         console.error('Error al conectar con el servidor:', error);
       }
+      setLoading(false);
     }
   };
 
