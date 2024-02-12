@@ -1,7 +1,7 @@
 import { MongoClient, Db, Collection } from 'mongodb';
 
 // Cadena de conexión a tu clúster MongoDB Atlas
-const uri: string = 'mongodb+srv://lucioaberte:Kp7Iy19xbDstKLlp@labemails.cwcapbx.mongodb.net/';
+const uri: string = process.env.DBSTRING;
 
 // Nombre de la base de datos y colección que utilizarás
 const dbName: string = 'LABemails';
