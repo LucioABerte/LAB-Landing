@@ -1,7 +1,11 @@
 import { MongoClient, Db, Collection } from 'mongodb';
 
 // Cadena de conexión a tu clúster MongoDB Atlas
-const uri: string = process.env.DBSTRING;
+const uri: string | undefined = process.env.DBSTRING;
+
+if (!uri) {
+  throw new Error('La cadena de conexión no está definida');
+}
 
 // Nombre de la base de datos y colección que utilizarás
 const dbName: string = 'LABemails';
