@@ -40,7 +40,6 @@ function NewsletterSection() {
   const handleDownload = async () => {
     if (validateEmail()) {
       setLoading(true);
-      downloadPDF();
       try {
         const response = await fetch('/api/save-email', {
           method: 'POST',
@@ -50,6 +49,7 @@ function NewsletterSection() {
           body: JSON.stringify({ email }),
         });
         if (response.ok) {
+          downloadPDF();
           setSnackbarOpen(true);
           setLoading(false);
         } else {
