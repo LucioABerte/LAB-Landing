@@ -1,4 +1,5 @@
-import React, { forwardRef } from "react";
+// DownloadButton.tsx
+import React, { forwardRef, ReactElement } from "react";
 
 type StyledButtonProps = {
   text: string;
@@ -35,8 +36,5 @@ const DownloadButton = forwardRef<HTMLButtonElement, StyledButtonProps>(
     );
   }
 );
-
-// Set the displayName separately
-DownloadButton.displayName = 'DownloadButton';
 
 export default DownloadButton;
