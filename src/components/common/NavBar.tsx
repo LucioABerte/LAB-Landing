@@ -91,11 +91,12 @@ function NavBar() {
                 src="/svgs/x.svg"
                 className="w-[80%] cursor-pointer animate-in fade-in zoom-in texto-aumentado"
                 onClick={toggleMenu}
+                alt="menu close"
                 />
                 ) : (
                   <img
                   src="/svgs/hamburger.svg"
-                  alt="logo"
+                  alt="menu Open"
                   className="w-[80%] cursor-pointer animate-in fade-in zoom-in texto-aumentado"
                   onClick={toggleMenu}
                   />
