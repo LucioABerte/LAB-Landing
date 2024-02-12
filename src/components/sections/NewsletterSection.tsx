@@ -51,6 +51,7 @@ function NewsletterSection() {
         });
         if (response.ok) {
           setSnackbarOpen(true);
+          setLoading(false);
         } else {
           console.error('Error al guardar el correo electrónico en el servidor');
         }
@@ -58,7 +59,6 @@ function NewsletterSection() {
         console.error('Error al conectar con el servidor:', error);
       }
     }
-    setLoading(false);
   };
 
 
