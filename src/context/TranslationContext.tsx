@@ -54,20 +54,9 @@ export const TranslationProvider: React.FC<Props> = ({ children }) => {
     localStorage.setItem('translations', JSON.stringify(translations));
   };
 
-  const handleLanguageChange = (newLanguage: 'en' | 'es') => {
-    setLanguage(newLanguage);
-    setLoadingTranslation(true);
-    setTimeout(() => {
-      setLoadingTranslation(false);
-    }, 2500); // Simulating translation loading time
-
-    if (!loadedFromLocalStorage) {
-      saveTranslationsToLocalStorage();
-    }
-  };
 
   return (
-    <TranslationContext.Provider value={{ language, setLanguage: handleLanguageChange, t, loadingTranslation, setLoadingTranslation }}>
+    <TranslationContext.Provider value={{ language, setLanguage, t, loadingTranslation, setLoadingTranslation }}>
       {loadingTranslation && (
         <div className="loading-overlay">
           <div className="spinner"></div>
