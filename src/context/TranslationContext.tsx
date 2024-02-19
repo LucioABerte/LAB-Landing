@@ -30,21 +30,6 @@ export const useTranslation = () => {
 export const TranslationProvider: React.FC<Props> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [loadingTranslation, setLoadingTranslation] = useState(false);
-  const [translationsLoaded, setTranslationsLoaded] = useState(false);
-  const [translatedTexts, setTranslatedTexts] = useState<{ [key in TranslationKeys]: string }>({});
-
-  useEffect(() => {
-    // Load translations only once
-    setLoadingTranslation(true);
-    // Simulate loading translations
-    setTimeout(() => {
-      setTranslatedTexts({
-        ...translations[language],
-      });
-      setTranslationsLoaded(true);
-      setLoadingTranslation(false);
-    }, 2500);
-  }, [language]);
 
   const t = (key: TranslationKeys) => {
     return translations[language][key] || key;
