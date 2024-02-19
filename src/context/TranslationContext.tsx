@@ -1,5 +1,5 @@
 'use client'
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import translations from './translations.json';
 
 
@@ -30,13 +30,44 @@ export const useTranslation = () => {
 export const TranslationProvider: React.FC<Props> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [loadingTranslation, setLoadingTranslation] = useState(false);
+  const [loadedFromLocalStorage, setLoadedFromLocalStorage] = useState(false);
+
+  const loadTranslationsFromLocalStorage = () => {
+    const storedTranslations = localStorage.getItem('translations');
+    if (storedTranslations) {
+      const parsedTranslations = JSON.parse(storedTranslations);
+      translations['en'] = parsedTranslations['en'];
+      translations['es'] = parsedTranslations['es'];
+      setLoadedFromLocalStorage(true);
+    }
+  };
+
+  useEffect(() => {
+    loadTranslationsFromLocalStorage();
+  }, []);
 
   const t = (key: TranslationKeys) => {
     return translations[language][key] || key;
   };
 
+  const saveTranslationsToLocalStorage = () => {
+    localStorage.setItem('translations', JSON.stringify(translations));
+  };
+
+  const handleLanguageChange = (newLanguage: 'en' | 'es') => {
+    setLanguage(newLanguage);
+    setLoadingTranslation(true);
+    setTimeout(() => {
+      setLoadingTranslation(false);
+    }, 2500); // Simulating translation loading time
+
+    if (!loadedFromLocalStorage) {
+      saveTranslationsToLocalStorage();
+    }
+  };
+
   return (
-    <TranslationContext.Provider value={{ language, setLanguage, t, loadingTranslation, setLoadingTranslation }}>
+    <TranslationContext.Provider value={{ language, setLanguage: handleLanguageChange, t, loadingTranslation, setLoadingTranslation }}>
       {loadingTranslation && (
         <div className="loading-overlay">
           <div className="spinner"></div>
