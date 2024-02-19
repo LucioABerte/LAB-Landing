@@ -1,9 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { navigateToSection } from "@/hooks";
-import { useTranslation } from '../../context/TranslationContext';
+//import { navigateToSection } from "@/hooks";
+import { useTranslation } from '@/context/TranslationContext';
 import { Album, Download, Equalizer, Headphones, Mic, Speaker } from "@mui/icons-material";
-
+import Link from "next/link";
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
@@ -20,8 +21,14 @@ function NavBar() {
     setLanguage(lang);
   };
 
-  const handleNavRoute = (section: string) => {
-    navigateToSection(section)
+  // se utiliza para la navegación a modo simple page app con scroll nav
+  //const handleNavRoute = (section: string) => {
+  //  navigateToSection(section)
+  //  setMenu(false);
+  //  setSelectedItem(section);
+  //}
+
+  const clicked = (section: string) => {
     setMenu(false);
     setSelectedItem(section);
   }
@@ -40,24 +47,24 @@ function NavBar() {
         <div className="flex items-center justify-between h-24 mx-[5rem]">
           <img src="/images/barLAB_logo.svg" alt="logo" className="w-20"/>
           <div className="flex gap-[20px] xl:gap-[50px] text-[16px] items-center select-none ">
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'home' ? 'selected' : ''}`} onClick={() => handleNavRoute('home')}>
-              {t('nav1')}
-            </p>
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'services' ? 'selected' : ''}`} onClick={() => handleNavRoute('services')}>
-              {t('nav2')}
-            </p>
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'about' ? 'selected' : ''}`} onClick={() => handleNavRoute('about')}>
-              {t('nav3')}
-            </p>
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'testimonials' ? 'selected' : ''}`} onClick={() => handleNavRoute('testimonials')}>
-              {t('nav4')}
-            </p>
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'team' ? 'selected' : ''}`} onClick={() => handleNavRoute('team')}>
-              {t('nav5')}
-            </p>
-            <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => handleNavRoute('download')}>
-              {t('nav6')}
-            </p>
+            <Link href="/home" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'home' ? 'selected' : ''}`} onClick={() => clicked('home')}> {/*onClick={() => handleNavRoute('home')}*/}      
+                {t('nav1')}    
+            </Link>
+            <Link href="/services" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'services' ? 'selected' : ''}`} onClick={() => clicked('services')}>
+                {t('nav2')}
+            </Link>
+            <Link href="/about" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'about' ? 'selected' : ''}`} onClick={() => clicked('about')}>
+                {t('nav3')}
+            </Link>
+            <Link href="/testimonials" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'testimonials' ? 'selected' : ''}`} onClick={() => clicked('testimonials')}>
+                {t('nav4')}
+            </Link>
+            <Link href="/team" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'team' ? 'selected' : ''}`} onClick={() => clicked('team')}>
+                {t('nav5')}
+            </Link>
+            <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
+                {t('nav6')}
+            </Link>
           </div>
           <div className="flex items-center gap-[40px] select-none">
             <div className="flex items-center justify-center gap-4 w-28 h-8 text-white ">
@@ -129,39 +136,39 @@ function NavBar() {
             <div className="flex flex-col gap-8 mt-8 mx-8 md:mx-12">
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Album fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'home' ? 'selected' : ''}`} onClick={() => handleNavRoute('home')}>
-                  {t('nav1')}
-                </p>
+                <Link href="/home" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'home' ? 'selected' : ''}`} onClick={() => clicked('home')}> {/*onClick={() => handleNavRoute('home')}*/}      
+                  {t('nav1')}    
+                </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Mic fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'services' ? 'selected' : ''}`} onClick={() => handleNavRoute('services')}>
+                <Link href="/services" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'services' ? 'selected' : ''}`} onClick={() => clicked('services')}>
                   {t('nav2')}
-                </p>
+                </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Equalizer fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'about' ? 'selected' : ''}`} onClick={() => handleNavRoute('about')}>
+                <Link href="/about" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'about' ? 'selected' : ''}`} onClick={() => clicked('about')}>
                   {t('nav3')}
-                </p>
+                </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Speaker fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'testimonials' ? 'selected' : ''}`} onClick={() => handleNavRoute('testimonials')}>
+                <Link href="/testimonials" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'testimonials' ? 'selected' : ''}`} onClick={() => clicked('testimonials')}>
                   {t('nav4')}
-                </p>
+                </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Headphones fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'team' ? 'selected' : ''}`} onClick={() => handleNavRoute('team')}>
+                <Link href="/team" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'team' ? 'selected' : ''}`} onClick={() => clicked('team')}>
                   {t('nav5')}
-                </p>
+                </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <Download fontSize="small"/> 
-                <p className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => handleNavRoute('download')}>
+                <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
                   {t('nav6')}
-                </p>
+                </Link>
               </div>
             </div>
           </div>

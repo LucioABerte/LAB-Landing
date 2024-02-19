@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import localFont from 'next/font/local'
+import { TranslationProvider } from '@/context/TranslationContext'
+import NavBar from '@/components/common/NavBar'
+import FooterSection from '@/components/common/FooterSection'
 
 
 export const metadata: Metadata = {
@@ -42,9 +45,15 @@ export default function RootLayout({
 }) {
   return (   
     <html lang="en">
-      <body  className={league.className}>
-        {children}
-      </body>
+        <body  className={league.className}>
+          <TranslationProvider>
+            <NavBar />
+            <div className="mt-24 md:32 lg:mt-8 px-4 md:px-[5rem] 2xl:px-12">
+              {children}
+              <FooterSection />
+            </div>
+          </TranslationProvider>
+        </body>
     </html>
   )
 }
