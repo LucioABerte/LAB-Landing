@@ -30,30 +30,25 @@ export const useTranslation = () => {
 export const TranslationProvider: React.FC<Props> = ({ children }) => {
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [loadingTranslation, setLoadingTranslation] = useState(false);
-  const [loadedFromLocalStorage, setLoadedFromLocalStorage] = useState(false);
-
-  const loadTranslationsFromLocalStorage = () => {
-    const storedTranslations = localStorage.getItem('translations');
-    if (storedTranslations) {
-      const parsedTranslations = JSON.parse(storedTranslations);
-      translations['en'] = parsedTranslations['en'];
-      translations['es'] = parsedTranslations['es'];
-      setLoadedFromLocalStorage(true);
-    }
-  };
+  const [translationsLoaded, setTranslationsLoaded] = useState(false);
+  const [translatedTexts, setTranslatedTexts] = useState<{ [key in TranslationKeys]: string }>({});
 
   useEffect(() => {
-    loadTranslationsFromLocalStorage();
-  }, []);
+    // Load translations only once
+    setLoadingTranslation(true);
+    // Simulate loading translations
+    setTimeout(() => {
+      setTranslatedTexts({
+        ...translations[language],
+      });
+      setTranslationsLoaded(true);
+      setLoadingTranslation(false);
+    }, 2500);
+  }, [language]);
 
   const t = (key: TranslationKeys) => {
     return translations[language][key] || key;
   };
-
-  const saveTranslationsToLocalStorage = () => {
-    localStorage.setItem('translations', JSON.stringify(translations));
-  };
-
 
   return (
     <TranslationContext.Provider value={{ language, setLanguage, t, loadingTranslation, setLoadingTranslation }}>

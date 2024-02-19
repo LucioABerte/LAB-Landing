@@ -33,12 +33,12 @@ function NavBar() {
     setSelectedItem(section);
   }
 
-  useEffect(() => {
-    setLoadingTranslation(true);
-    setTimeout(() => {
-      setLoadingTranslation(false);
-    }, 2500);
-  }, [activeLanguage]);
+  //useEffect(() => {
+  //  setLoadingTranslation(true);
+  //  setTimeout(() => {
+  //    setLoadingTranslation(false);
+  //  }, 2500);
+  //}, [activeLanguage]);
 
   return (
     <div className="sticky top-0  md:shadow-none z-20">
