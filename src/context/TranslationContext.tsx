@@ -1,12 +1,12 @@
 'use client'
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import translations from './translations.json';
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 type TranslationKeys = keyof typeof translations['en'];
 
 interface TranslationContextType {
-  language: 'en' | 'es';
+  language: 'en' | 'es' | undefined;
   setLanguage: (language: 'en' | 'es') => void;
   t: (key: TranslationKeys) => string;
   loadingTranslation: boolean;
@@ -28,22 +28,28 @@ export const useTranslation = () => {
 };
 
 export const TranslationProvider: React.FC<Props> = ({ children }) => {
-  const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const [language, setLanguage] = useState<'en' | 'es'>();
   const [loadingTranslation, setLoadingTranslation] = useState(false);
 
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language');
     if (storedLanguage && (storedLanguage === 'en' || storedLanguage === 'es')) {
-      setLanguage(storedLanguage);
+      setLanguage(storedLanguage as 'en' | 'es');
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('language', language);
+    if (language) {
+      localStorage.setItem('language', language);
+    }
   }, [language]);
 
   const t = (key: TranslationKeys) => {
-    return translations[language][key] || key;
+    if (language) {
+      return translations[language][key] || key;
+    }
+    // Handle the case where language is undefined
+    return "Loading...";
   };
 
   return (

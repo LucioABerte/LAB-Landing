@@ -49,7 +49,7 @@ function TestimonialSection() {
     },
   ];
   return (
-    <section className="mt-[5rem] 2xl:mt-[4rem] stm:pt-6" id="testimonials">
+    <section className="mt-[5rem] 2xl:mt-[4rem] stm:pt-6 sm:pt-6" id="testimonials">
       {loadingTranslation ? (
             <div className="flex flex-col items-center">
               <Skeleton variant="text" width={160} height={50} animation="wave" />

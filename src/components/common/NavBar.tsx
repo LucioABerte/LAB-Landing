@@ -31,6 +31,7 @@ function NavBar() {
   const clicked = (section: string) => {
     setMenu(false);
     setSelectedItem(section);
+    localStorage.setItem('selectedItem', section);
   }
 
   //useEffect(() => {
@@ -39,6 +40,28 @@ function NavBar() {
   //    setLoadingTranslation(false);
   //  }, 2500);
   //}, [activeLanguage]);
+
+  useEffect(() => {
+      //console.log('Fetching language from local storage...');
+    const storedLanguage = localStorage.getItem('language');
+      //console.log('Stored language:', storedLanguage);
+  
+    if (storedLanguage && (storedLanguage === 'en' || storedLanguage === 'es')) {
+      //console.log('Setting active language:', storedLanguage);
+      setActiveLanguage(storedLanguage as 'en' | 'es');
+    } else {
+      //console.log('No stored language found or unrecognized language. Setting default language to Spanish (es).');
+      setActiveLanguage('es');
+      localStorage.setItem('language', 'es');
+    }
+  
+    const storedSelectedItem = localStorage.getItem('selectedItem');
+      //console.log('Stored selected item:', storedSelectedItem);
+    if (storedSelectedItem) {
+      //console.log('Setting selected item:', storedSelectedItem);
+      setSelectedItem(storedSelectedItem);
+    }
+  }, []);
 
   return (
     <div className="sticky top-0  md:shadow-none z-20">
