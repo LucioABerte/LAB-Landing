@@ -18,6 +18,7 @@ function NewsletterSection() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [imageSrc, setImageSrc] = useState("");
 
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,13 +47,23 @@ function NewsletterSection() {
     document.body.removeChild(link);
   };
 
+  useEffect(() => {
+    const language = localStorage.getItem("language");
+    if (language === "en") {
+      // Si el idioma es inglés, establece la ruta de la imagen en inglés
+      setImageSrc(`/images/guideeng.jpg`);
+    } else {
+      // Si el idioma es español o no está definido, establece la ruta de la imagen en español
+      setImageSrc(`/images/guidespa.jpg`);
+    }
+  }, []); // Solo se ejecuta una vez al montar el componente
   
 
   const handleDownload = () => {
     if (validateEmail()) {
       setLoading(true);
 
-      fetch('/api/saveEmail', {
+      fetch('/api/save-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +128,7 @@ function NewsletterSection() {
           <div className="flex flex-col md:flex-col items-center md:mt-[2.31rem] sm:mt-0 2xl:flex-row lg:flex-row">
             <div>
               <img
-                src={`/images/${t("Guide")}`}
+                src={imageSrc}
                 alt="large envelop image"
                 className="md:w-[80%] sm:w-[80%] sm:ml-5 stm:w-[80%] stm:ml-6"
               />
