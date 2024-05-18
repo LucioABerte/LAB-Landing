@@ -137,7 +137,8 @@ function NewsletterSection() {
               <p className="mb-[1.44rem] ml-16 text-normal font-semibold text-customGray sm:mb-0 sm:ml-2 stm:mb-0 stm:ml-0">
                 {t("DownloadDesc")}
               </p>
-              <div className="flex flex-col items-center mt-12">
+              <iframe width="540" height="305"  className="flex h-screen w-full" src="https://2d19fcc2.sibforms.com/serve/MUIFAFEf099CLsm_BI6IKS3suumQbG_XM3lwO8cy7vurbta0EmNq6k6IlQAd-rpKvY6FpTl-kk5GK3tckqBEV_t0WKd2CcrL2prQVRCY0PF5VxFMfJmBar2JULy5JLlVc_oZKK0FU6C8A-PVQHJizGz8DGLh-U1oqFVf3E6lou3AljVqmpBOcVhZCTzPPBO50VHzo4a_QdcAPOzu"></iframe>
+             {/* <div className="flex flex-col items-center mt-12">
                 <Input
                   type="email"
                   placeholder={t("email")}
@@ -159,7 +160,7 @@ function NewsletterSection() {
                     }
                   </button>
                 </div>
-              </div>
+                  </div>*/}
             </div>
           </div>
         )
