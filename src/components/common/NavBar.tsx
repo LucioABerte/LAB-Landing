@@ -88,6 +88,9 @@ function NavBar() {
             <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
                 {t('nav6')}
             </Link>
+            <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'store' ? 'selected' : ''}`} onClick={() => clicked('store')}>
+                {t('nav7')}
+            </Link>
           </div>
           <div className="flex items-center gap-[40px] select-none">
             <div className="flex items-center justify-center gap-4 w-28 h-8 text-white ">
