@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 //import { navigateToSection } from "@/hooks";
 import { useTranslation } from '@/context/TranslationContext';
-import { Album, Download, Equalizer, Headphones, Mic, Speaker } from "@mui/icons-material";
+import { Album, Download,LocalMall, Equalizer, Headphones, Mic, Speaker } from "@mui/icons-material";
 import Link from "next/link";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 
@@ -194,6 +194,12 @@ function NavBar() {
                 <Download fontSize="small"/> 
                 <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
                   {t('nav6')}
+                </Link>
+              </div>
+              <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
+                <LocalMall fontSize="small"/> 
+                <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('Tienda')}>
+                  {t('nav7')}
                 </Link>
               </div>
             </div>
