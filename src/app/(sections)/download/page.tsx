@@ -51,10 +51,10 @@ function NewsletterSection() {
     const language = localStorage.getItem("language");
     if (language === "en") {
       // Si el idioma es inglés, establece la ruta de la imagen en inglés
-      setImageSrc(`/images/test.png`);
+      setImageSrc(`/images/test2PM1.png`);
     } else {
       // Si el idioma es español o no está definido, establece la ruta de la imagen en español
-      setImageSrc(`/images/test.png`);
+      setImageSrc(`/images/test2PM1.png`);
     }
   }, []); // Solo se ejecuta una vez al montar el componente
   
@@ -134,11 +134,11 @@ function NewsletterSection() {
               />
             </div>
             <div>
-              <p className="mb-[1.44rem] ml-16 text-normal font-semibold text-customGray sm:mb-0 sm:ml-2 stm:mb-0 stm:ml-0">
+              <p className="mb-[1.44rem] ml-8  mr-8 text-normal font-semibold text-customGray sm:mb-0 sm:ml-2 stm:mb-0 stm:ml-0">
                 {t("DownloadDesc")}
               </p>
-              
-              <iframe width="500" height="305" className="flex h-screen w-full" src="https://2d19fcc2.sibforms.com/serve/MUIFAJvMlavWv-8BPYrkiRQqX4iutP4EgmoeHMs-PmKFZlIj-i5FEl_R4tlYxm4YCprlbXYiwBZ7jMDZxWk1iWWsDYRZJi3-qCddxk3NrxSaFPnHA1ljsCdqeBC2KqztIXFjLrIb9x5SSIZbaQdTuS93X3myWNn3Wlz9D2EzRQni_P3xqwibgviE-UpzbaBv3mQSZ8-nqku01u7g"></iframe>
+              <iframe className="flex h-screen w-full mb-[-8rem]" src="https://2d19fcc2.sibforms.com/serve/MUIFACOMFxBjSF6GTdFS1gDWUAjK0WK6yBs1Z0dyTmMJpWnNAYxzzzqfxbuegMSSMYNbnaWaUTJ71QUkT6PKpYvcbo7NPjuEADq-kJUO2PPxnD6fBtFwQ5N3I1OZaroSonWVA_4jOe31ichoc987_T3mMQyLjaK26XT4j0GeuScgBfqTKAFGQfgTWUhOaHQpkC0rNvunjOJXR4fH"></iframe>
+              {/*<iframe width="500" height="305" className="flex h-screen w-full" src="https://2d19fcc2.sibforms.com/serve/MUIFAJvMlavWv-8BPYrkiRQqX4iutP4EgmoeHMs-PmKFZlIj-i5FEl_R4tlYxm4YCprlbXYiwBZ7jMDZxWk1iWWsDYRZJi3-qCddxk3NrxSaFPnHA1ljsCdqeBC2KqztIXFjLrIb9x5SSIZbaQdTuS93X3myWNn3Wlz9D2EzRQni_P3xqwibgviE-UpzbaBv3mQSZ8-nqku01u7g"></iframe>*/}
              {/* <iframe width="540" height="305"  className="flex h-screen w-full" src="https://2d19fcc2.sibforms.com/serve/MUIFAFEf099CLsm_BI6IKS3suumQbG_XM3lwO8cy7vurbta0EmNq6k6IlQAd-rpKvY6FpTl-kk5GK3tckqBEV_t0WKd2CcrL2prQVRCY0PF5VxFMfJmBar2JULy5JLlVc_oZKK0FU6C8A-PVQHJizGz8DGLh-U1oqFVf3E6lou3AljVqmpBOcVhZCTzPPBO50VHzo4a_QdcAPOzu"></iframe>*/}
              {/* <div className="flex flex-col items-center mt-12">
                 <Input
