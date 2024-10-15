@@ -24,6 +24,9 @@ function NewsletterSection() {
     } else if (activeTab === 2) {
       // Pestaña Compresión
       imagePath = language === "en" ? "/images/test.png" : "/images/test.png";
+    } else if (activeTab === 3) {
+      // Pestaña Compresión
+      imagePath = language === "en" ? "/images/ArmNeg.png" : "/images/ArmNeg.png";
     }
   
     setImageSrc(imagePath);
@@ -53,6 +56,12 @@ function NewsletterSection() {
                  onClick={() => setActiveTab(2)}
                >
                  Compresión
+               </button>
+               <button
+                 className={`px-8 py-6 sm:px-4 sm:py-4 rounded-xl text-[1.05rem] ${activeTab === 3 ? 'bg-[#ffdf2b] text-[#808080]' : 'bg-[#000000] text-[#fcfcfc]'}`}
+                 onClick={() => setActiveTab(3)}
+               >
+                 Armonía Negativa
                </button>
              </div>
 
@@ -131,6 +140,30 @@ function NewsletterSection() {
                  </div>
                </div>
              )}
+             {activeTab === 3 && (
+                <div className="flex flex-col md:flex-col items-center md:mt-[2.31rem] sm:mt-0 2xl:flex-row lg:flex-row">
+                  <div>
+                    <img
+                      src={imageSrc}
+                      alt="large envelop image"
+                      className="md:w-[80%] sm:w-[80%] sm:ml-5 stm:w-[80%] stm:ml-6"
+                    />
+                  </div>
+                  <div>
+                     <h3 className=" mt-4 mb-4 ml-2 text-[2rem] font-bold text-white">
+                         {t("DownloadSubtitle4")}
+                     </h3>
+                    <p className="mb-[1.44rem] ml-2 mr-8 text-normal font-semibold text-customGray sm:mb-0 sm:ml-2 stm:mb-0 stm:ml-0">
+                      {t("DownloadDesc4")}
+                    </p>
+                    <iframe
+                      className="flex h-screen w-full mb-[-8rem]"
+                      src="https://2d19fcc2.sibforms.com/serve/MUIFAEXg8EG0iUFc9yHCArQ9KaHiOfuhq77_Tm1vERetp8mQ7rEHD0poZiPjAO8P-8Wou3-g8e3M8ciEdrCZB2BX237TuSFBcoROTApilF1KA21rluQ0QrVRHaGg1hwMRbQt34yfgJqLs-NvQ2bHqC5QfPxGzD83sGKLgoC14uVqmXSwqFROUAu3IoTZb-ANyfWaMrUcDpRsiNQE"
+                      title="Formulario 4"
+                    ></iframe>
+                  </div>
+                </div>
+              )}
     </section>
   );
 }
