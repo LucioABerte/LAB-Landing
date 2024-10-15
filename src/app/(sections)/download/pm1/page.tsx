@@ -7,7 +7,7 @@ import { useTranslation } from "@/context/TranslationContext";
 function NewsletterSection() {
 
   const {t, loadingTranslation} = useTranslation()
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1);
   const [imageSrc, setImageSrc] = useState("");
 
 

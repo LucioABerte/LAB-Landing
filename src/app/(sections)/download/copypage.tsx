@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import Header from "../../../components/common/Header";
-import { Input } from "../../../components/ui/input";
+import Header from "@/components/common/Header";
+import { Input } from "@/components/ui/input";
 import { useTranslation } from "@/context/TranslationContext";
 import { CircularProgress, Modal, Skeleton } from "@mui/material";
 import Confetti from "react-dom-confetti";
