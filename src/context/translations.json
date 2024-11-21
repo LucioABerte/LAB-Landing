@@ -61,7 +61,10 @@
       "Guide": "guideeng.jpg",
       "DownloadSuccessMessage" : "Downloaded successfully",
       "DownloadGuide": "/GuideEng.pdf",
-      "DownloadGuideName": "From Inspiration to Recording-A Step-by-Step Preproduction Guide for Musicians"
+      "DownloadGuideName": "From Inspiration to Recording-A Step-by-Step Preproduction Guide for Musicians",
+      "Contest": "1° EDICIÓN 2024",
+      "ContestTitle": "CONCURSO LAB",
+      "ContestButton": "Formulario de Inscripción"
     },
     "es": {
       "nav1": "Inicio",
@@ -125,6 +128,9 @@
       "Guide": "guidespa.jpg",
       "DownloadSuccessMessage" : "Descarga Completada Correctamente",
       "DownloadGuide": "/GuideSpa.pdf",
-      "DownloadGuideName": "De la Inspiración a la Grabación Guía Paso a Paso de Preproducción para Artistas Musicales"
+      "DownloadGuideName": "De la Inspiración a la Grabación Guía Paso a Paso de Preproducción para Artistas Musicales",
+      "Contest": "1° EDICIÓN 2024",
+      "ContestTitle": "CONCURSO LAB",
+      "ContestButton": "Formulario de Inscripción"
     }
   }

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 //import { navigateToSection } from "@/hooks";
 import { useTranslation } from '@/context/TranslationContext';
-import { Album, Download,LocalMall, Equalizer, Headphones, Mic, Speaker } from "@mui/icons-material";
+import { Album, Download,LocalMall, Equalizer, Headphones, Mic, Speaker, ContentPaste } from "@mui/icons-material";
 import Link from "next/link";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 
@@ -10,7 +10,7 @@ function NavBar() {
   const [menu, setMenu] = useState(false);
   const [activeLanguage, setActiveLanguage] = useState<'en' | 'es'>('en');
   const { setLanguage, t, setLoadingTranslation } = useTranslation();
-  const [selectedItem, setSelectedItem] = useState<string>('');
+  const [selectedItem, setSelectedItem] = useState<string>('home');
 
   const toggleMenu = () => {
     setMenu(!menu);
@@ -87,6 +87,9 @@ function NavBar() {
             </Link>
             <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
                 {t('nav6')}
+            </Link>
+            <Link href="/contest" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'contest' ? 'selected' : ''}`} onClick={() => clicked('contest')}>
+                Concurso LAB
             </Link>
             <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'store' ? 'selected' : ''}`} onClick={() => clicked('store')}>
                 {t('nav7')}
@@ -197,8 +200,14 @@ function NavBar() {
                 </Link>
               </div>
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
+                <ContentPaste fontSize="small"/> 
+                <Link href="/contest" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'contest' ? 'selected' : ''}`} onClick={() => clicked('contest')}>
+                  Concurso LAB
+                </Link>
+              </div>
+              <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <LocalMall fontSize="small"/> 
-                <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('Tienda')}>
+                <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'tienda' ? 'selected' : ''}`} onClick={() => clicked('Tienda')}>
                   {t('nav7')}
                 </Link>
               </div>
