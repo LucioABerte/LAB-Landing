@@ -35,7 +35,7 @@ function ContestLAB() {
         <ul className="mt-6 space-y-4 text-left text-lg text-gray-300">
           <li>● <b className='text-[#ffdf2b]'>Primer lugar:</b> Mezcla y Masterización (máx. 4 min).</li>
           <li>● <b className='text-[#ffdf2b]'>Segundo lugar:</b> Masterización (máx. 4 min).</li>
-          <li>● <b className='text-[#ffdf2b]'>Tercer lugar:</b> 40% descuento en nuestros Ebooks.</li>
+          <li>● <b className='text-[#ffdf2b]'>Tercer lugar:</b> 50% descuento en Mezcla y Master.</li>
         </ul>
       </div>
 

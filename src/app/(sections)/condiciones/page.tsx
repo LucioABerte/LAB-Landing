@@ -86,7 +86,7 @@ const TerminosYCondiciones: React.FC = () => {
       <ul className="list-disc pl-5 text-gray-300 mb-4">
         <li>Primer lugar: Mezcla y Masterización (máx. 4:20 min).</li>
         <li>Segundo lugar: Masterización (máx. 4 min).</li>
-        <li>Tercer lugar: 40% descuento en nuestros Ebooks.</li>
+        <li>Tercer lugar: 50% de descuento en Mezcla y Master.</li>
       </ul>
       <p className="text-gray-300 mb-4">
         Además todos los ganadores tendrán un espacio de conversación digital.
