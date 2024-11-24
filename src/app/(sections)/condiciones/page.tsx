@@ -41,10 +41,10 @@ const TerminosYCondiciones: React.FC = () => {
       <h2 className="text-2xl font-semibold text-white mb-4">5. CÓMO PARTICIPAR</h2>
       <p className="text-gray-300 mb-4">
         Los participantes deberán visitar <a href='https://forms.gle/VHuPb3rwbD2oWGvf9' target="_blank" rel="noopener noreferrer" className='underline text-[#ffdf2b]'>https://forms.gle/VHuPb3rwbD2oWGvf9</a> e inscribir los datos que se solicitan, así como un link a un video
-        de YouTube y un link de descarga de su canción.
+        de YouTube (OPCIONAL) y un link de descarga de su canción.
       </p>
       <p className="text-gray-300 mb-4">
-        El video deberá explicar que ha significado la música en su vida, cómo es su proceso de composición y cuales son sus grandes
+        El video es OPCIONAL y deberá explicar que ha significado la música en su vida, cómo es su proceso de composición y cuales son sus grandes
         inspiraciones. Este video no deberá durar más de 60 segundos, no es necesario que cuente con edición y deberá publicarse
         previamente en una cuenta de YouTube o Vimeo con posibilidad a compartir. El participante únicamente deberá compartir el
         link al video.
@@ -52,8 +52,8 @@ const TerminosYCondiciones: React.FC = () => {
       <p className="text-gray-300 mb-4">
         Adicionalmente deberá compartir un link de descarga a una canción que será la participante del concurso. La canción deberá
         venir en formato WAV en 24 bit 48 khz ó WAV 16 bit 44.1 khz y NO MEZCLADA O MASTERIZADA. No deberá superar los 4:20 minutos,
-        deberá ser un tema original, no cover. No se aceptarán pistas bajadas o compradas, deberán ser de naturaleza original. No
-        se aceptarán MP3. Para compartir la canción, deberán subirla a Google Drive, One Drive, Dropbox, Soundcloud u otro servicio
+        deberá ser un tema original, no cover. No se aceptarán pistas bajadas o compradas, deberán ser de naturaleza original. 
+        se aceptarán MP3 320 Kbps. Para compartir la canción, deberán subirla a Google Drive, One Drive, Dropbox, Soundcloud u otro servicio
         para compartir archivos mediante la nube, deberá ser de consulta libre y sin contraseña, para libre descarga, y el link no
         debe de tener fecha de caducidad.
       </p>

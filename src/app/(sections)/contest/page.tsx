@@ -64,13 +64,14 @@ function ContestLAB() {
       <div className="mt-16 w-full max-w-4xl text-gray-300" id="scroll-target">
         <h2 className="text-2xl font-bold text-white mb-4">BASES GENERALES</h2>
         <ol className="list-decimal space-y-4 pl-4 marker:text-[#ffdf2b]">
+          <li>Para participar deberás seguirnos en nuestras redes sociales (Instagram y TikTok)</li>
           <li>Para participar deberás llenar el formulario con tus datos y los links correspondientes.</li>
-          <li>Solo se aceptará un archivo en formato WAV (ver especificaciones más abajo) y NO CANCIONES MEZCLADAS Y MASTERIZADAS.</li>
+          <li>Solo se aceptará un archivo en formato WAV o MP3 (ver especificaciones más abajo) y NO CANCIONES MEZCLADAS Y MASTERIZADAS.</li>
           <li>El último día para enviar tu inscripción será el <b className='text-[#ffdf2b]'>5 de diciembre.</b></li>
           <li>No serán válidas las inscripciones incompletas.</li>
           <li>Recuerda que sólo será posible una inscripción y una canción por usuario.</li>
           <li>Al terminar el proceso, sólo se comunicará por redes sociales y por mail a los ganadores.</li>
-          <li>De ser elegidos, deberán tener el multitrack listo para enviar dentro de las 24hs.</li>
+          <li>De ser elegidos, deberán tener el multitrack listo para enviar dentro de las 72hs.</li>
           <li>LAB Home Studio enviará los premios directamente vía mail.</li>
           <li>Los premios tienen una vigencia de 1 mes desde la notificación del premio.</li>
         </ol>
@@ -78,10 +79,10 @@ function ContestLAB() {
 
       {/* Sección de Video */}
       <div className="mt-16 w-full max-w-4xl text-gray-300">
-        <h2 className="text-2xl font-bold text-white mb-4">VIDEO:</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">VIDEO (Opcional):</h2>
         <ol className="list-decimal space-y-4 pl-4 marker:text-[#ffdf2b]">
-          <li>Deberás compartirnos un video hasta 60 segundos, en formato horizontal, explicando qué significa la música en tu vida, tu proceso de composición y tus inspiraciones.</li>
-          <li>El video debe publicarse en YouTube o Vimeo, en una cuenta abierta, y compartir el link en el apartado “Link de Video”.</li>
+          <li>Deberás compartirnos un video (OPCIONAL) hasta 60 segundos, en formato horizontal, explicando qué significa la música en tu vida, tu proceso de composición y tus inspiraciones.</li>
+          <li>El video debe publicarse en YouTube o Vimeo, en una cuenta abierta, y compartir el link en el apartado “Link de Video OPCIONAL”.</li>
         </ol>
       </div>
 
@@ -89,9 +90,9 @@ function ContestLAB() {
       <div className="mt-16 w-full max-w-4xl text-gray-300">
         <h2 className="text-2xl font-bold text-white mb-4">AUDIO:</h2>
         <ol className="list-decimal space-y-4 pl-4 marker:text-[#ffdf2b]">
-          <li>Deberás compartir tu demo en formato WAV mediante un link de descarga.</li>
+          <li>Deberás compartir tu demo en formato WAV O MP3 mediante un link de descarga.</li>
           <li>Subí tu archivo a Google Drive, Dropbox, SoundCloud, OneDrive, etc. Asegúrate de habilitar la opción de descarga.</li>
-          <li>Solo se aceptarán archivos WAV en 24 bit 48 kHz o WAV 16 bit 44.1 kHz. No se aceptan mp3.</li>
+          <li>Solo se aceptarán archivos WAV en 24 bit 48 kHz o WAV 16 bit 44.1 kHz. Se aceptan mp3 320 Kbps.</li>
           <li>La duración del tema no debe superar los 4:20 min.</li>
           <li>La canción debe ser original, no un cover.</li>
           <li>No se aceptan archivos de canciones ya procesadas ni publicadas.</li>
