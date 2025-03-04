@@ -88,9 +88,9 @@ function NavBar() {
             <Link href="/download" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'download' ? 'selected' : ''}`} onClick={() => clicked('download')}>
                 {t('nav6')}
             </Link>
-            <Link href="/contest" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'contest' ? 'selected' : ''}`} onClick={() => clicked('contest')}>
+            {/*<Link href="/contest" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'contest' ? 'selected' : ''}`} onClick={() => clicked('contest')}>
                 Concurso LAB
-            </Link>
+            </Link>*/}
             <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'store' ? 'selected' : ''}`} onClick={() => clicked('store')}>
                 {t('nav7')}
             </Link>
