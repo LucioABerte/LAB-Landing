@@ -199,12 +199,12 @@ function NavBar() {
                   {t('nav6')}
                 </Link>
               </div>
-              <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
+             {/* <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <ContentPaste fontSize="small"/> 
                 <Link href="/contest" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'contest' ? 'selected' : ''}`} onClick={() => clicked('contest')}>
                   Concurso LAB
                 </Link>
-              </div>
+              </div>*/}
               <div className="flex flex-row gap-4 sm:gap-2 sm:ml-[-20px] texto-aumentado">
                 <LocalMall fontSize="small"/> 
                 <Link href="https://labhomestudio.tiendup.com/" className={`hover:text-primary cursor-pointer flex items-center gap-2 font-[500] text-gray texto-aumentado ${selectedItem === 'tienda' ? 'selected' : ''}`} onClick={() => clicked('Tienda')}>
